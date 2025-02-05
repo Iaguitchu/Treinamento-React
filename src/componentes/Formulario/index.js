@@ -1,12 +1,17 @@
+import { useState } from 'react'
 import Botao from '../Botao'
 import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
 import './Formulario.css'
-import { useState } from 'react'
-
 
 const Formulario = (props) => {
-    const aoSalvar = (evento) =>{
+
+    const [nome, setNome] = useState('')
+    const [cargo, setCargo] = useState('')
+    const [imagem, setImagem] = useState('')
+    const [time, setTime] = useState('')
+
+    const aoSalvar = (evento) => {
         evento.preventDefault()
         props.aoColaboradorCadastrado({
             nome,
@@ -14,14 +19,11 @@ const Formulario = (props) => {
             imagem,
             time
         })
-    }
-
-    console.log("estou aqui")
-
-    const [nome, setNome] = useState('')
-    const [cargo, setCargo] = useState('')
-    const [imagem, setImagem] = useState('')
-    const [time, setTime] = useState('')
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setTime('')
+    }   
 
     return (
         <section className='formulario'>
@@ -39,3 +41,6 @@ const Formulario = (props) => {
 }
 
 export default Formulario
+
+
+

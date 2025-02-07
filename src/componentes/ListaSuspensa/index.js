@@ -14,4 +14,4 @@ const ListaSuspensa = (props) => {
     )
 }
 
-export default ListaSuspensa
+export default ListaSuspensa 
